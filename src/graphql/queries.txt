@@ -1,0 +1,147 @@
+createAlbum: mutation {
+  createAlbum (
+ album: {
+    title: "Plastic Beach", 
+    artist: "Gorillaz", 
+    country: "UK",
+    released: 2010,
+    genre: ["Electronic", "Hip Hop", "Pop"],
+    style: ["Leftfield", "Electro", "Synth-pop"],
+    format: "Vinyl",
+    notes: "The records come in two full colour glossy printed inner sleeves, housed in a gatefold outer sleeve.",
+    quantity: 25,
+    price: 39.99
+  }) {
+     id
+    title
+    artist
+    country
+    released
+    genre
+    style
+    format
+    notes
+    stock
+    quantity
+    price
+    }  
+}
+
+readAllAlbums: query{
+  readAlbums {
+     id
+    title
+    artist
+    country
+    released
+    genre
+    style
+    format
+    notes
+    stock
+    quantity
+    price
+  }
+}
+
+readAlbum: query{
+  readAlbum(id: "6458e9188fedec454f3ebc84") {
+     id
+    title
+    artist
+    country
+    released
+    genre
+    style
+    format
+    notes
+    stock
+    quantity
+    price
+  }
+}
+
+updateAlbum: mutation{
+  updateAlbum (
+  id: "6458f72ef8123ee6f70a281c",
+  album: {
+    title: "Fatal Portrait", 
+    artist: "King Diamond", 
+    country: "US",
+    released: 1986,
+    genre: ["Rock"],
+    style: ["Heavy Metal"],
+    format: "Cassette",
+    notes: "Contains bonus King Diamond logo sticker, only available with the cassette release.",
+    quantity: 2,
+    price: 49.99,
+  }) {
+     id
+    title
+    artist
+    country
+    released
+    genre
+    style
+    format
+    notes
+    stock
+    quantity
+    price
+  }
+}
+
+deleteAlbum: mutation{
+  deleteAlbum (id: "6458f2c7470288dc7592b431")
+}
+
+findByArtist: query{
+  findByArtist(artist: "Demolition Hammer") {
+    id
+    title
+    artist
+    country
+    released
+    genre
+    style
+    format
+    notes
+    stock
+    quantity
+    price
+  }
+}
+
+findByCountry: query{
+  findByCountry(country: "US") {
+     id
+    title
+    artist
+    country
+    released
+    genre
+    style
+    format
+    notes
+    stock
+    quantity
+    price
+  }
+}
+
+findByFormat: query{
+  findByFormat(format: "CD") {
+     id
+    title
+    artist
+    country
+    released
+    genre
+    style
+    format
+    notes
+    stock
+    quantity
+    price
+  }
+}
